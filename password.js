@@ -16,3 +16,13 @@ const getpass = () => {
   const generates = generatepass(password1.value);
   password2.value = generates;
 };
+
+const savepassword = () => {
+  document.title = password2.value;
+  saveButton.setAttribute(
+    "href",
+    "data:text/plain;charset=utf-8," +
+      encodeURIComponent(`password saya: ${document.title}`)
+  );
+  saveButton.setAttribute("download", "MyPasswordGeneratorLOG.txt");
+};
